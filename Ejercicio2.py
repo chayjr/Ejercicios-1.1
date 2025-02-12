@@ -24,19 +24,18 @@ def leibniz_pi(n):
 
 true_pi = np.pi
 N_values = [10, 100, 1000, 10000]  # se realiza una lista con diferentes cantidades de términos de la serie para la aproximación
-errors_abs = []  # para guardar los errores absolutos
-errors_rel = []  # para guardar los errores relativos
-errors_cua = []  # para almacenar los errores cuadráticos
-
+errors_abs = []  # Aqui se almacenan los errore absolutos
+errors_rel = []  #  Aqui se almacenan los errore relativos
+errors_cua = []  #  Aqui se almacenan los errore cuadraticos
 
 for N in N_values:
     approx_pi = leibniz_pi(N)
     error_abs = abs(true_pi - approx_pi)
     error_rel = error_abs / true_pi
     error_cua = error_abs**2
-    errors_abs.append(error_abs)  # Se almacena el error absoluto en la lista correspondiente
-    errors_rel.append(error_rel)  # Se guarda el error relativo
-    errors_cua.append(error_cua)  # Se registra el error cuadrático
+    errors_abs.append(error_abs)  # Se almacena el error absoluto en la lista 
+    errors_rel.append(error_rel)  # Se almacena el error relativo
+    errors_cua.append(error_cua)  # Se almacena el error cuadratico
     print(f"N={N}: Error absoluto={error_abs}, Error relativo={error_rel}, Error cuadrático={error_cua}")  # Se muestran los errores calculados para cada uno
 
 
@@ -46,8 +45,8 @@ plt.plot(N_values, errors_rel, label='Error relativo', marker='s')  # Se grafica
 plt.plot(N_values, errors_cua, label='Error cuadrático', marker='^')  # Se grafica el error cuadrático con marcadores triangulares
 plt.xscale('log')
 plt.yscale('log')
-plt.xlabel('N')  # Se etiqueta el eje X
-plt.ylabel('Error')  # Se etiqueta el eje Y
+plt.xlabel('N')  # Se le agrega una etiqueta al eje x
+plt.ylabel('Error')  # Se le agrega una etiqueta al eje x
 plt.legend()
 plt.title('Errores en la aproximación de π')
-plt.show()  # Se muestra la gráfica
+plt.show()  # Muestra la grafica 
